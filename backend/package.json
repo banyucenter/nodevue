@@ -1,0 +1,25 @@
+{
+  "name": "restapinode",
+  "version": "1.0.0",
+  "description": "Aplikasi REST API Node JS MySQl",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/banyucenter/nodevue.git"
+  },
+  "keywords": [
+    "nodejs",
+    "restapi",
+    "vue",
+    "express"
+  ],
+  "author": "Ipung Dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/banyucenter/nodevue/issues"
+  },
+  "homepage": "https://github.com/banyucenter/nodevue#readme"
+}
