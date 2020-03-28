@@ -34,8 +34,8 @@ exports.productid = function (req, res) {
 
 //modul untuk menambah produk
 exports.tambahProduct = function (req, res) {
-    let product_name = req.body.product_name;
-    let product_price = req.body.product_price;
+    var product_name = req.body.product_name;
+    var product_price = req.body.product_price;
 
     connection.query('INSERT INTO product (product_name,product_price) values(?,?)',[product_name, product_price],
         function (error, rows, fields) {
@@ -46,5 +46,21 @@ exports.tambahProduct = function (req, res) {
             }
         });
 };
+
+//modul untuk ubah data
+exports.ubahProduct = function(req,res){
+    var idProduct = req.body.product_id;
+    var product_name = req.body.product_name;
+    var product_price = req.body.product_price;
+
+    connection.query('UPDATE product SET product_name=?,product_price=? WHERE product_id=?', [product_name,product_price,idProduct],
+        function(error, rows, fields){
+            if(error){
+                console.log(error)
+            }else {
+                response.ok("Berhasil Update Produk",res)
+            }
+        });
+}
 
 
