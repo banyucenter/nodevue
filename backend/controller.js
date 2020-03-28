@@ -63,4 +63,17 @@ exports.ubahProduct = function(req,res){
         });
 }
 
+//modul untuk hapus data
+exports.hapusProduct = function(req,res){
+    var idProduct = req.body.product_id;
+    connection.query('DELETE FROM product WHERE product_id = ?',[idProduct],
+    function(error, rows, fields){
+        if(error){
+            console.log(error)
+        }else {
+            response.ok("Berhasil Hapus Produk",res)
+        }
+    });
+}
+
 
