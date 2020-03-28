@@ -1,15 +1,18 @@
-var express = require('express'),
-    app = express(),
-    port = process.env.port || 3000,
-    bodyParser = require('body-parser'),
-    controller = require('./controller');
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
 
-app.use(bodyParser.urlencoded({extended:true}));
+ 
+// parse application/json
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+
+//panggil routes
 var routes = require('./routes');
 routes(app);
 
-app.listen(port, () => {
-    console.log(`Server started on port :`) + port;
-});
+//Server listening
+app.listen(3000,() =>{
+    console.log('Server started on port 3000...');
+  });

@@ -1,9 +1,17 @@
 'use strict';
 
-module.exports = function(app) {
-    var todoList = require('./controller');
+module.exports = function (app) {
+    var jsonku = require('./controller');
 
     app.route('/')
-        .get(todoList.index)
-    app.route('/users').get(todoList.users);
+        .get(jsonku.index);
+
+    app.route('/product')
+        .get(jsonku.products);
+
+    app.route('/product/:id')
+        .get(jsonku.productid);
+
+    app.route('/tambah')
+        .post(jsonku.tambahProduct);
 };
